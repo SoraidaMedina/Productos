@@ -17,14 +17,14 @@ const Login = () => {
   const router = useRouter();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [users, setUsers] = useState<User[]>([]); // Definir que es una lista de User
+  const [users, setUsers] = useState<User[]>([]); 
 
   // Obtener usuarios de la API
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const response = await fetch("https://fakestoreapi.com/users");
-        const data: User[] = await response.json(); // Asegurar el tipo de datos
+        const data: User[] = await response.json(); 
         setUsers(data);
       } catch (error) {
         console.error("Error al obtener los usuarios:", error);
@@ -33,7 +33,6 @@ const Login = () => {
     fetchUsers();
   }, []);
 
-  // Función para iniciar sesión
   const handleLogin = () => {
     const foundUser = users.find(
       (user) => user.username === username && user.password === password
@@ -41,7 +40,7 @@ const Login = () => {
 
     if (foundUser) {
       Alert.alert("Inicio de sesión exitoso", `Bienvenido ${foundUser.username}`);
-      router.replace("/(tabs)"); // Redirigir a la pantalla de Tabs
+      router.replace("/(tabs)"); 
     } else {
       Alert.alert("Error", "Usuario o contraseña incorrectos");
     }
