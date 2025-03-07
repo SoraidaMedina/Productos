@@ -13,7 +13,7 @@ export default function TabsLayout() {
                 }} 
             />
             <Tabs.Screen 
-                name="categorias"  // 📌 Agregamos la pestaña de categorías
+                name="categorias"  
                 options={{ 
                     title: 'Categorías', 
                     tabBarIcon: ({ color }) => <FontAwesome6 name="list" size={24} color={color} />
