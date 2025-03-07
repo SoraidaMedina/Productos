@@ -1,12 +1,11 @@
 import { ActivityIndicator, FlatList, Image, StyleSheet, Text, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'expo-router';
-import Boton from '../../app-temp/Components/Boton'; // Asegúrate de que la ruta es correcta
+import Boton from '../../app-temp/Components/Boton'; 
 
 const productoDetails = () => {
     const ruta = useRouter();
     
-    // Definimos el tipo de producto
     type producto = {
         id: number;
         title: string;
@@ -19,8 +18,7 @@ const productoDetails = () => {
             count: number;
         };
     };
-
-    // Estados para almacenar los productos y el estado de carga
+    
     const [Productos, setProductos] = useState<producto[]>([]);
     const [Cargando, setCargando] = useState<boolean>(true);
 
@@ -52,7 +50,7 @@ const productoDetails = () => {
         );
     }
 
-    // Función para renderizar cada producto
+ 
     const renderProducto = ({ item }: { item: producto }) => (
         <View style={styles.card}>
             <Text style={styles.productTitle}>{item.title}</Text>
@@ -80,7 +78,7 @@ const productoDetails = () => {
 
 export default productoDetails;
 
-// Estilos
+
 const styles = StyleSheet.create({
     center: { flex: 1, justifyContent: 'center', alignItems: 'center' },
     container: { flex: 1, alignItems: 'center', paddingTop: 10 },
