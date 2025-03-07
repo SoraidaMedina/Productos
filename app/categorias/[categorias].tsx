@@ -14,17 +14,17 @@ export default function CategoriaProductos() {
 
     useEffect(() => {
         async function fetchProductos() {
-            if (!nombre) return; // Si no hay nombre, no hacer la petición
+            if (!nombre) return; 
 
             try {
                 const apiUrl = `https://fakestoreapi.com/products/category/${nombre}`;
-                console.log("🌐 URL de la API:", apiUrl); // Verifica la URL antes de hacer la petición
+                console.log("URL de la API:", apiUrl);
 
                 const response = await fetch(apiUrl);
                 if (!response.ok) throw new Error(`Error en la API: ${response.status}`);
                 
                 const data = await response.json();
-                console.log(" Productos recibidos:", data); // Verifica si la API devuelve datos
+                console.log(" Productos recibidos:", data); 
 
                 setProductos(data);
             } catch (error) {
