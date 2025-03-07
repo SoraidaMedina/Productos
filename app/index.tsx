@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { View, Text, TextInput, Button, Alert, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
 
-// Definir el tipo de usuario
 type User = {
   id: number
   username: string;
